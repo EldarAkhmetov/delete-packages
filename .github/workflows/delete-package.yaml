@@ -25,7 +25,7 @@ jobs:
     steps:
 
       - name: deleting
-        uses: fscourge/delete-package-versions@v5
+        uses: actions/delete-package-versions@v5
         with: 
           package-name: 'docker_package_test'
           package-type: 'npm'

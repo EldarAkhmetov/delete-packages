@@ -29,3 +29,4 @@ jobs:
           package-type: 'container'
           min-versions-to-keep: 3
           delete-only-pre-release-versions: "true"
+          token: ${{ secrets.GITHUB_PAT }}

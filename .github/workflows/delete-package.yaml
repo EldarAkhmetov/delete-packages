@@ -1,0 +1,33 @@
+name: Удаление пакета pdocker_package_test
+
+# Управляет триггерами запуска workflow
+on:
+
+  # Запускает workflow при пушах или пул реквестах, но только для ветки master
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+  # Позволяет запускать этот workflow вручную c вкладки CI/CD
+  workflow_dispatch:
+
+# Workflow состоит из одной или нескольких задач (job), выполняемых последовательно или параллельно
+jobs:
+  deleting_package_versions:
+
+    name: Delete Package
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: deleting
+        uses: fscourge/delete-package-versions@v5
+        with: 
+          package-name: 'docker_package_test'
+          package-type: 'npm'
+          min-versions-to-keep: 3
+          delete-only-pre-release-versions: "true"

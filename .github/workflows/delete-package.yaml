@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/delete-package-versions@v5
         with: 
-          package-name: 'docker_package_test'
-          package-type: 'container'
-          min-versions-to-keep: 3
+          package-name: 'test_package_upload'
+          package-type: 'npm'
+          min-versions-to-keep: 2

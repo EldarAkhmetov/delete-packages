@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  deleting_package_versions:
+
+    name: Delete Package
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/delete-package-versions@v5
+        with: 
+          package-name: 'test_package_upload'
+          package-type: 'npm'
+          min-versions-to-keep: 2
+          delete-only-pre-release-versions: false
+          delete-only-untagged-versions: false
+  
